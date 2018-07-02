@@ -1,0 +1,3 @@
+|A|读取监测数据|分析仪器|TCP/IP Sock|172.20.110.27|2012||$0 1000000 T/cm3$x*1$T/cm3$|PN-F|1|C通道自动方式1||{Send:rt TSI-3080 PN-F####} {Delay:1000} {Receive:;####;;;;$$$$} {Let_k:[[Class_PN-F#N30#D30#L2000#]Class_Data];]]=MyData(2,1)}  |||440725863SP01A|1|
+|A|读取监测数据|分析仪器|TCP/IP Sock|172.20.110.27|2012||$0 1000000 T/cm3$x*1$T/cm3$|PN-F|1|C通道自动方式1||{Send:rt TSI-3080 PN-l####} {Delay:1000} {Receive:;####;;;;$$$$} {Let_k:[[Class_PN-l#N30#D30#L2000#]Class_Data];]]=MyData(2,1)}  |||440725863SP01A|2|
+|A|识别仪器设备|分析仪器|TCP/IP Sock|172.20.110.27|2012||$0 1000000 T/cm3$x*1$T/cm3$|PN-F|1|C通道自动方式1|PN-F|{Send:Check TSI-3080####} {Delay:1000} {Receive:;####;;;;$Check TSI-3080$$OK$}  |||440725863SP01A|1|

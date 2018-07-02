@@ -1,0 +1,6 @@
+|A|读取监测数据|分析仪器|TCP/IP Sock|192.168.0.17|9880||$0 500 ppb$x*17/(22.4*1000)$mg/m3$|NH3||连续数据|NH3|{Send:,HEX(145),NH3,HEX(13),}  {Receive:;,Hex(13),;1;;;$NH3 $$ ppb$}  {Correct:MyData(2),1}  ||||1|
+|A|读取监测数据|分析仪器|TCP/IP Sock|192.168.0.17|9880||$0 500 ppb$x*30/22.4/1000$mg/m3$|NH3||连续数据|NH3|{Send:,HEX(145),NO,HEX(13),}  {Receive:;,Hex(13),;1;;;$no $$ ppb$}{Correct:MyData(2,1),x*1;NO(NH3)}}  ||||2|
+|A|读取监测数据|分析仪器|TCP/IP Sock|192.168.0.17|9880||$0 500 ppb$x*46/22.4/1000$mg/m3$|NH3||连续数据|NH3|{Send:,HEX(145),NOx,HEX(13),}  {Receive:;,Hex(13),;1;;;$nox $$ ppb$}{Correct:MyData(2,1),x*1;NOx(NH3)}}  ||||3|
+|A|读取监测数据|分析仪器|TCP/IP Sock|192.168.0.17|9880||$0 500 ppb$x*46/22.4/1000$mg/m3$|NH3||连续数据|NH3|{Send:,HEX(145),NO2,HEX(13),}  {Receive:;,Hex(13),;1;;;$no2 $$ ppb$}{Correct:MyData(2,1),x*1;NO2(NH3)}}  ||||4|
+|A|读取监测数据|分析仪器|TCP/IP Sock|192.168.0.17|9880||$0 500 ppb$x*1$ppb$|NH3||连续数据|NH3|{Send:,HEX(145),Nt,HEX(13),}  {Receive:;,Hex(13),;1;;;$Nt $$ ppb$}{Correct:MyData(2,1),x*1;Nt(NH3)}}  ||||5|
+|A|识别仪器设备|分析仪器|TCP/IP Sock|192.168.0.17|9880||$0 500 ppb$x*17/(22.4*1000)$mg/m3$|NH3||连续数据|NH3|{Send:,HEX(145),NH3,HEX(13),}  {Receive:;,Hex(13),;1;;;$NH3 $$ ppb$}  ||||1|

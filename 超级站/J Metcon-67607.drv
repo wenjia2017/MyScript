@@ -1,0 +1,2 @@
+|A|读取监测数据|分析仪器|TCP/IP Sock|172.20.110.27|2012||$0 20 -$x*1$-$20$20$|J|1|C通道自动方式1||{Send:RT Metcon-67607 J####} {Delay:1000} {Receive:;####;;;;$$$$} {Let_k:[[Class_J#N30#D30#L2000#]Class_Data];]]=MyData(2,1)}  |||440725863SP01A|1|
+|A|识别仪器设备|分析仪器|TCP/IP Sock|172.20.110.27|2012||$0 20 -$x*1$-$20$20$|J|1|C通道自动方式1||{Send:Check Metcon-67607####} {Delay:1000} {Receive:;####;;;;$Check Metcon-67607$$OK$}  |||440725863SP01A|1|

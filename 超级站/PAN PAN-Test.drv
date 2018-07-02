@@ -1,0 +1,2 @@
+|A|读取监测数据|分析仪器|TCP/IP Sock|172.20.110.27|2012||$0 70 ppb$x*1$ppb$|PAN||||{Send:rt PAN-Test PAN####} {Delay:1000} {Receive:;####;;;;$;$3$;$} {Correct:MyData(2,1),x*1}  ||||1|
+|A|识别仪器设备|分析仪器|TCP/IP Sock|172.20.110.27|2012||$0 70 ppb$x*1$ppb$|PAN||||{Send:Check PAN-Test####} {Delay:1000} {Receive:;####;;;;$Check PAN-Test$$OK$}  ||||1|

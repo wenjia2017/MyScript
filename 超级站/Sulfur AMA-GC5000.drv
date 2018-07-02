@@ -1,0 +1,2 @@
+|A|读取监测数据|分析仪器|TCP/IP Sock|172.20.110.27|2012||$0 100 ppb$x*1$ppb$|Sulfur|1|C通道自动方式1|Sulfur|{Send:rt AMA-GC5000-Sulfur Sulfur####} {Delay:2000} {Receive:;####;;;;$$$$} {Let_k:[[Class_Sulfur#N30#D30#L2000#]Class_Data];]]=MyData(2,1)} |||440725863SP01A|1|
+|A|识别仪器设备|分析仪器|TCP/IP Sock|172.20.110.27|2012||$0 100 ppb$x*1$ppb$|Sulfur|1|C通道自动方式1|Sulfur|{Send:Check AMA-GC5000-Sulfur####} {Delay:1000} {Receive:;####;;;;$Check AMA-GC5000-Sulfur$$OK$}  |||440725863SP01A|1|
