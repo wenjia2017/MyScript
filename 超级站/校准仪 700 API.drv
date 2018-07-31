@@ -1,6 +1,6 @@
 |A|读取监测数据|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|校准仪|1|连续数据|校准仪|{Send:T ACTDILFLOW,HEX(13),}  {Receive:;,HEX(13),;1;;;$DIL=$$ LPM$}  ||||1|
-|A|读取监测数据|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 slm$x*1$slm$|校准仪|1|连续数据|校准仪|{Send:T ACTCALFLOW,HEX(13),} {Delay:1000}{Receive:;,HEX(13),;1;;;$CAL=$$ LPM$}  {Correct:MyData(2,1),x*1;标准气流量}  ||||2|
-|A|读取监测数据|分析仪器|RS-232|COM7|n,8,1|9600|$0 10 slm$x*1$slm$|校准仪|1|连续数据|校准仪|{Send:T ACTDILFLOW,HEX(13),} {Delay:1000}  {Receive:;,HEX(13),;1;;;$DIL=$$ LPM$}  {Correct:MyData(2,1),x*1;零气流量}  ||||3|
+|A|读取监测数据|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 slm$x*1$slm$|校准仪|1|连续数据|校准仪|{Send:T ACTCALFLOW,HEX(13),}{Receive:;,HEX(13),;1;;;$CAL=$$ LPM$}  {Correct:MyData(2,1),x*1;标准气流量}  ||||2|
+|A|读取监测数据|分析仪器|RS-232|COM7|n,8,1|9600|$0 10 slm$x*1$slm$|校准仪|1|连续数据|校准仪|{Send:T ACTDILFLOW,HEX(13),}  {Receive:;,HEX(13),;1;;;$DIL=$$ LPM$}  {Correct:MyData(2,1),x*1;零气流量}  ||||3|
 |A|关闭标准源|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|校准仪|1|||{Send:C STANDBY,HEX(13),}  {Receive:$$$$}  {Delay:1000}  {Send:C STANDBY,HEX(13),}  {Receive:$$$$}  {Delay:1000}  {Send:C STANDBY,HEX(13),}  {Receive:$$$$}  ||||1|
 |A|检查精度 CO|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|校准仪|1|连续数据|0|{Function:MyData(0,1)=([CO_仪器量程上标]-[CO_仪器量程下标])*0.18}  {Function:MyData(0,2)=[零气流量_仪器量程上标]*[零气流量_额定输出率]}{Send:C GENERATE MyData(0,1) ppm co MyData(0,2),hEX(13),}  {Delay:3000} {Receive:;All;;;;$$$$}||||1|
 |A|检查精度 CO SEQ 21|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|校准仪|1|连续数据|0|{Type:检查精度 CO}  {Send:C EXECSEQ 21,HEX(13),}  {Receive:;,Hex(13),;1;;;$$$$}  {Delay:100}{Err:BB}||||1|

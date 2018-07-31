@@ -1,0 +1,3 @@
+|A|读取监测数据|分析仪器|RS-232|COM11|e,7,2|9600|$0 1 mg/m3$x*1$mg/m3$|PM10|1|连续数据||  {Send:?055C,Hex(13),}  {Delay:100}  {Receive:;;;;;$$$,Hex(13),$} {When_Goto:1,1//MyData(2,1)=NoThing//} {Function:MyData(2,1)=Receive//MyData(2,1)$Byte_Line$$6,5$} {When_Goto:1,1//MyData(2,1)=NoThing//}  {Correct:MyData(2,1),x/1}  |||440725863SP01A|1|
+|A|读取监测数据|分析仪器|RS-232|COM11|e,7,2|9600|$0 1 mg/m3$x*1$mg/m3$|PM10|1|连续数据||  {When_Goto:1,1//MyData(2,1)<>NoThing//}  {Correct:MyData(2,1),x*1}  |||440725863SP01A|2|
+|A|脚本语句测试|分析仪器|RS-232|COM11|e,7,2|9600|$0 1 mg/m3$x*1$mg/m3$|PM10|1|连续数据|yy-MM-dd  HH:|{Send:?055C,Hex(13),}  {Delay:100}  {Receive:;;;;;$$$,Hex(13),$}  {Function:MyData(2,1)=Receive//MyData(2,1)$Byte_Line$$6,5$} |,风速,|||1|

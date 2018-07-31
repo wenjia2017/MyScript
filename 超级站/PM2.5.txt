@@ -1,0 +1,1 @@
+{Type:EnviData ÆøÑ¹}{Send:P,HEX(13),,HEX(10),}{Receive:;,HEX(13),,HEX(10),;1;;;$$$  $$ $$ $$$}{Correct:MyData(2,4),x/1000}{Err:BB}{Delay:100}
