@@ -3,4 +3,9 @@
 |A|读取监测数据|分析仪器|TCP/IP Sock|192.168.0.17|9880||$0 500 ppb$x*46/22.4/1000$mg/m3$|NH3||连续数据|NH3|{Send:,HEX(145),NOx,HEX(13),}  {Receive:;,Hex(13),;1;;;$nox $$ ppb$}{Correct:MyData(2,1),x*1;NOx(NH3)}}  ||||3|
 |A|读取监测数据|分析仪器|TCP/IP Sock|192.168.0.17|9880||$0 500 ppb$x*46/22.4/1000$mg/m3$|NH3||连续数据|NH3|{Send:,HEX(145),NO2,HEX(13),}  {Receive:;,Hex(13),;1;;;$no2 $$ ppb$}{Correct:MyData(2,1),x*1;NO2(NH3)}}  ||||4|
 |A|读取监测数据|分析仪器|TCP/IP Sock|192.168.0.17|9880||$0 500 ppb$x*1$ppb$|NH3||连续数据|NH3|{Send:,HEX(145),Nt,HEX(13),}  {Receive:;,Hex(13),;1;;;$Nt $$ ppb$}{Correct:MyData(2,1),x*1;Nt(NH3)}}  ||||5|
+|A|读取诊断信息|在线设备型号||||||NH3|1|连续数据|0|{Let_k:MyData(295,1)=NH3}  {Let_k:MyData(295,2)=在线设备型号}  {Let_k:MyData(295,3)=[NH3_在线设备型号]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||1|
+|A|读取诊断信息|在线设备编号||||||NH3|1|连续数据|0|{Let_k:MyData(295,1)=NH3}  {Let_k:MyData(295,2)=在线设备编号}  {Let_k:MyData(295,3)=[NH3_在线设备编号]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||2|
+|A|读取诊断信息|在线设备替换日期时间||||||NH3|1|连续数据|0|{Let_k:MyData(295,1)=NH3}  {Let_k:MyData(295,2)=在线设备替换日期时间}  {Let_k:MyData(295,3)=[NH3_在线设备替换日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||3|
+|A|读取诊断信息|在线设备维修（起/止）日期时间||||||NH3|1|连续数据|0|{Let_k:MyData(295,1)=NH3}  {Let_k:MyData(295,2)=在线设备维修（起/止）日期时间}  {Let_k:MyData(295,3)=[NH3_在线设备维修（起/止）日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||4|
+|A|读取诊断信息|在线设备维修事项||||||NH3|1|连续数据|0|{Let_k:MyData(295,1)=NH3}  {Let_k:MyData(295,2)=在线设备维修事项}  {Let_k:MyData(295,3)=[NH3_在线设备维修事项]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||5|
 |A|识别仪器设备|分析仪器|TCP/IP Sock|192.168.0.17|9880||$0 500 ppb$x*17/(22.4*1000)$mg/m3$|NH3||连续数据|NH3|{Send:,HEX(145),NH3,HEX(13),}  {Receive:;,Hex(13),;1;;;$NH3 $$ ppb$}  ||||1|

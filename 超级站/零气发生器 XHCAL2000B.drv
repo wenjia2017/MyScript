@@ -1,5 +1,10 @@
 |A|读取监测数据|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|零气发生器|1|连续数据|零气发生器|{Send:calotwc$}  {Delay:1000}  {Receive:;;;;;$$$,$$,$$,$$,$$,$$,$$,$$,$$,$$,$$,$$,$$,$$,$$,$$,$$,$$$}  ||||1|
 |A|读取监测数据|分析仪器|RS-232|COM7|n,8,1|9600|$0 50 sccm$x*1$sccm$|零气发生器|1|连续数据|零气发生器|{Correct:MyData(2,16),x*1}  ||||2|
+|A|读取诊断信息|在线设备型号||||||零气发生器|1|连续数据|0|{Let_k:MyData(295,1)=零气发生器}  {Let_k:MyData(295,2)=在线设备型号}  {Let_k:MyData(295,3)=[零气发生器_在线设备型号]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||1|
+|A|读取诊断信息|在线设备编号||||||零气发生器|1|连续数据|0|{Let_k:MyData(295,1)=零气发生器}  {Let_k:MyData(295,2)=在线设备编号}  {Let_k:MyData(295,3)=[零气发生器_在线设备编号]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||2|
+|A|读取诊断信息|在线设备替换日期时间||||||零气发生器|1|连续数据|0|{Let_k:MyData(295,1)=零气发生器}  {Let_k:MyData(295,2)=在线设备替换日期时间}  {Let_k:MyData(295,3)=[零气发生器_在线设备替换日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||3|
+|A|读取诊断信息|在线设备维修（起/止）日期时间||||||零气发生器|1|连续数据|0|{Let_k:MyData(295,1)=零气发生器}  {Let_k:MyData(295,2)=在线设备维修（起/止）日期时间}  {Let_k:MyData(295,3)=[零气发生器_在线设备维修（起/止）日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||4|
+|A|读取诊断信息|在线设备维修事项||||||零气发生器|1|连续数据|0|{Let_k:MyData(295,1)=零气发生器}  {Let_k:MyData(295,2)=在线设备维修事项}  {Let_k:MyData(295,3)=[零气发生器_在线设备维修事项]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||5|
 |A|关泵|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|零气发生器|1|连续数据|0|  {Send:calzend$$} {Delay:1000} {Receive:;All;;;;$$$$}  {Send:calzend$$} {Delay:1000} {Receive:;All;;;;$$$$}  {Send:calsend$$} {Delay:1000} {Receive:;All;;;;$$$$} {Send:calsend$$} {Delay:1000} {Receive:;All;;;;$$$$}  ||||1|
 |A|关闭标准源|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|零气发生器|1||| {Send:calsend$} {Delay:1000} {Receive:;All;;;;$$$$}  {Send:calsend$} {Delay:1000} {Receive:;All;;;;$$$$} {Send:calzend$} {Delay:1000} {Receive:;All;;;;$$$$} {Send:calzend$} {Delay:1000} {Receive:;All;;;;$$$$} ||||1|
 |A|脚本语句测试|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|零气发生器|1|连续数据|9,18|{Send:C MANUAL  NO 0.0000 5.0000  OFF  NO,hEX(13),}  {rECEIVE:;,hEX(13),;1;;;$$$$} {Err:BB}  {Delay:100}||||1|

@@ -3,3 +3,8 @@
 |A|读取监测数据|分析仪器|RS-232|COM5|n,8,1|9600|$0 2000 1/Mm$x*1$1/Mm$|浊度仪|1|||{Function:MyData(2,1)=Receive//MyData(298,35)$,$1$,$}{Correct:MyData(2,1),x*1;SP_525}||||3|
 |A|读取监测数据|分析仪器|RS-232|COM5|n,8,1|9600|$0 2000 1/Mm$x*1$1/Mm$|浊度仪|1|||{Let_Flag:PS,0}{Function:MyData(2,1)=Receive//MyData(298,35)$,$6$,$}{When_Goto:1,1//MyData(2,1)=NoThing//}{When_Goto:1,1//MyData(2,1)<>01//MyData(2,1)<>03//}{Let_Flag:PS,1}||||4|
 |A|读取监测数据|分析仪器|RS-232|COM5|n,8,1|9600|$0 2000 1/Mm$x*1$1/Mm$|浊度仪|1|||{Let_Flag:PZ,0}{Function:MyData(2,1)=Receive//MyData(298,35)$,$6$,$}{When_Goto:1,1//MyData(2,1)=NoThing//}{When_Goto:1,1//MyData(2,1)<>02//MyData(2,1)<>04//MyData(2,1)<>05//}{Let_Flag:PZ,1}||||5|
+|A|读取诊断信息|在线设备型号||||||浊度仪|1|连续数据|0|{Let_k:MyData(295,1)=浊度仪}  {Let_k:MyData(295,2)=在线设备型号}  {Let_k:MyData(295,3)=[浊度仪_在线设备型号]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||1|
+|A|读取诊断信息|在线设备编号||||||浊度仪|1|连续数据|0|{Let_k:MyData(295,1)=浊度仪}  {Let_k:MyData(295,2)=在线设备编号}  {Let_k:MyData(295,3)=[浊度仪_在线设备编号]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||2|
+|A|读取诊断信息|在线设备替换日期时间||||||浊度仪|1|连续数据|0|{Let_k:MyData(295,1)=浊度仪}  {Let_k:MyData(295,2)=在线设备替换日期时间}  {Let_k:MyData(295,3)=[浊度仪_在线设备替换日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||3|
+|A|读取诊断信息|在线设备维修（起/止）日期时间||||||浊度仪|1|连续数据|0|{Let_k:MyData(295,1)=浊度仪}  {Let_k:MyData(295,2)=在线设备维修（起/止）日期时间}  {Let_k:MyData(295,3)=[浊度仪_在线设备维修（起/止）日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||4|
+|A|读取诊断信息|在线设备维修事项||||||浊度仪|1|连续数据|0|{Let_k:MyData(295,1)=浊度仪}  {Let_k:MyData(295,2)=在线设备维修事项}  {Let_k:MyData(295,3)=[浊度仪_在线设备维修事项]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||5|

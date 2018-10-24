@@ -2,6 +2,14 @@
 |A|读取监测数据|分析仪器|RS-232|COM7|n,8,1|9600|$0 50 sccm$x*1$sccm$|校准仪|1|连续数据|校准仪|{Correct:MyData(2,16),x*1;标准气流量}  ||||2|
 |A|读取监测数据|分析仪器|RS-232|COM7|n,8,1|9600|$0 10000 sccm$x*1$sccm$|校准仪|1|连续数据|校准仪|{Correct:MyData(2,15),x*1000;零气流量}  ||||3|
 |A|读取监测数据|分析仪器|RS-232|COM7|n,8,1|9600|$0 1000 ppb$x*1$ppb$|校准仪|1|连续数据|校准仪| {Send:calochr$}  {Delay:1000}  {Receive:;;;;;$$$O3=$$PPB$$$}  {Correct:MyData(2,2),x*1000;O3_CAL}  ||||4|
+|A|读取诊断信息|在线设备型号||||||校准仪|1|连续数据|0|{Let_k:MyData(295,1)=校准仪}  {Let_k:MyData(295,2)=在线设备型号}  {Let_k:MyData(295,3)=[校准仪_在线设备型号]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||1|
+|A|读取诊断信息|在线设备编号||||||校准仪|1|连续数据|0|{Let_k:MyData(295,1)=校准仪}  {Let_k:MyData(295,2)=在线设备编号}  {Let_k:MyData(295,3)=[校准仪_在线设备编号]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||2|
+|A|读取诊断信息|在线设备替换日期时间||||||校准仪|1|连续数据|0|{Let_k:MyData(295,1)=校准仪}  {Let_k:MyData(295,2)=在线设备替换日期时间}  {Let_k:MyData(295,3)=[校准仪_在线设备替换日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||3|
+|A|读取诊断信息|在线设备维修（起/止）日期时间||||||校准仪|1|连续数据|0|{Let_k:MyData(295,1)=校准仪}  {Let_k:MyData(295,2)=在线设备维修（起/止）日期时间}  {Let_k:MyData(295,3)=[校准仪_在线设备维修（起/止）日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||4|
+|A|读取诊断信息|在线设备维修事项||||||校准仪|1|连续数据|0|{Let_k:MyData(295,1)=校准仪}  {Let_k:MyData(295,2)=在线设备维修事项}  {Let_k:MyData(295,3)=[校准仪_在线设备维修事项]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||5|
+|A|读取诊断信息|标准气流量溯源传递日期时间||||||校准仪|1|连续数据|0|{Let_k:MyData(295,1)=校准仪}  {Let_k:MyData(295,2)=标准气流量溯源传递日期时间}  {Let_k:MyData(295,3)=[校准仪_标准气流量溯源传递日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||6|
+|A|读取诊断信息|零气流量溯源传递日期时间||||||校准仪|1|连续数据|0|{Let_k:MyData(295,1)=校准仪}  {Let_k:MyData(295,2)=零气流量溯源传递日期时间}  {Let_k:MyData(295,3)=[校准仪_零气流量溯源传递日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||7|
+|A|读取诊断信息|O3浓度溯源传递日期时间||||||校准仪|1|连续数据|0|{Let_k:MyData(295,1)=校准仪}  {Let_k:MyData(295,2)=O3浓度溯源传递日期时间}  {Let_k:MyData(295,3)=[校准仪_O3浓度溯源传递日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||8|
 |A|关闭标准源|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|校准仪|1||| {Send:calsend$} {Delay:1000} {Receive:;All;;;;$$$$}  {Send:calsend$} {Delay:1000} {Receive:;All;;;;$$$$} {Send:calzend$} {Delay:1000} {Receive:;All;;;;$$$$} {Send:calzend$} {Delay:1000} {Receive:;All;;;;$$$$} {Let_k:[零气发生器_引用任务]=关泵}  ||||1|
 |A|检查精度 CO|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|校准仪|1|连续数据|0|{Function:MyData(0,1)=([CO_仪器量程上标]-[CO_仪器量程下标])*0.18}  {Function:MyData(0,2)=[零气流量_仪器量程上标]*[零气流量_额定输出率]}  {Format:MyData(0,1),xxx}  {Format:MyData(0,2),xxxx}  {Send:calspan,C,MyData(0,2),MyData(0,1),PPM$}  {Receive:;All;;;;$$$$}  ||||1|
 |A|检查精度 NO NOx CO SO2 _1|分析仪器|RS-232|COM7|n,8,1|9600|$0 0.1 sLm$x*1$sLm$|校准仪|1|连续数据|0|{Function:MyData(0,1)=([NO_仪器量程上标]-[NO_仪器量程下标])*0.18}  {Function:MyData(0,2)=[零气流量_仪器量程上标]*[零气流量_额定输出率]}  {Format:MyData(0,1),xxx}  {Format:MyData(0,2),xxxx}  {Send:calspan,N,MyData(0,2),MyData(0,1),PPB$}  {Receive:;All;;;;$$$$}  ||||1|
