@@ -1,0 +1,7 @@
+|A|读取监测数据|分析仪器|TCP/IP Sock|192.168.2.133|2012||$0 20 -$x*1$-$|VOC|1|C通道自动方式1|VOC|{Send:rt NMHC-9000 FID-NMHC####} {Delay:5000} {Receive:;####;;;;$$$$} {Let_k:[[Class_VOC#N15#D15#L8000#]Class_Data];]]=MyData(2,1)}   |||441900407A|1|
+|A|读取诊断信息|在线设备型号||||||VOC|1|连续数据|0|{Let_k:MyData(295,1)=VOC}  {Let_k:MyData(295,2)=在线设备型号}  {Let_k:MyData(295,3)=[NMHC_在线设备型号]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||1|
+|A|读取诊断信息|在线设备编号||||||VOC|1|连续数据|0|{Let_k:MyData(295,1)=VOC}  {Let_k:MyData(295,2)=在线设备编号}  {Let_k:MyData(295,3)=[NMHC_在线设备编号]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||2|
+|A|读取诊断信息|在线设备替换日期时间||||||VOC|1|连续数据|0|{Let_k:MyData(295,1)=VOC}  {Let_k:MyData(295,2)=在线设备替换日期时间}  {Let_k:MyData(295,3)=[NMHC_在线设备替换日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||3|
+|A|读取诊断信息|在线设备维修（起/止）日期时间||||||VOC|1|连续数据|0|{Let_k:MyData(295,1)=VOC}  {Let_k:MyData(295,2)=在线设备维修（起/止）日期时间}  {Let_k:MyData(295,3)=[NMHC_在线设备维修（起/止）日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||4|
+|A|读取诊断信息|在线设备维修事项||||||VOC|1|连续数据|0|{Let_k:MyData(295,1)=VOC}  {Let_k:MyData(295,2)=在线设备维修事项}  {Let_k:MyData(295,3)=[NMHC_在线设备维修事项]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||5|
+|A|识别仪器设备|分析仪器|TCP/IP Sock|192.168.2.133|2012||$0 20 -$x*1$-$|VOC|1|C通道自动方式1|VOC|{Send:Check NMHC-9000####} {Delay:5000} {Receive:;####;;;;$Check NMHC-9000$$OK$}  |||441900407A|1|

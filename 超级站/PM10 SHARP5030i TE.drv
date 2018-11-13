@@ -27,4 +27,7 @@
 |A|读取诊断信息|分析仪预防性维修日期时间||||||PM10|1|连续数据|0|{Let_k:MyData(295,1)=PM10}  {Let_k:MyData(295,2)=分析仪预防性维修日期时间}  {Let_k:MyData(295,3)=[PM10_分析仪预防性维修日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||21|
 |A|读取诊断信息|标准膜（手动）校准量程日期时间||||||PM10|1|连续数据|0|{Let_k:MyData(295,1)=PM10}  {Let_k:MyData(295,2)=标准膜（手动）校准量程日期时间}  {Let_k:MyData(295,3)=[PM10_标准膜（手动）校准量程日期时间]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||22|
 |A|读取诊断信息|校准前标准膜质量响应值偏差||||||PM10|1|连续数据|0|{Let_k:MyData(295,1)=PM10}  {Let_k:MyData(295,2)=校准前标准膜质量响应值偏差}  {Let_k:MyData(295,3)=[PM10_校准前标准膜质量响应值偏差]}  {Let_k:MyData(295,4)=}  {Let_k:MyData(295,5)=}  ||||23|
+|A|回补监测数据|分析仪器|RS-232|COM11|e,7,2|9600|$0 1 mg/m3$x*1$mg/m3$|PM10|1|连续数据|HH:mm MM-dd-yy|{Send:,Hex(142),srec MyData(1,1) 1,Hex(13),,Hex(10),}  {Delay:2000}   {Receive:;,HEX(13),,HEX(10),;1;;;$sharp$$neph$$baro$$vac$$ambtemp$$ftemp$} {When_Goto:1,1//MyData(2,1)=Nothing//} {correct:Mydata(2,1),x*1}  |||440725863SP01A|1|
+|A|回补监测数据|分析仪器|RS-232|COM11|e,7,2|9600|$-40 60 ℃$x*1$℃$|PM10|1|连续数据|HH:mm MM-dd-yy|{When_Goto:1,1//MyData(2,5)=Nothing//}   {correct:Mydata(2,5),x*1;PM10_环境温度}  |||440725863SP01A|2|
+|A|回补监测数据|分析仪器|RS-232|COM11|e,7,2|9600|$533 1067 hPa$x*1$hPa$|PM10|1|连续数据|HH:mm MM-dd-yy|{When_Goto:1,1//MyData(2,3)=Nothing//}   {correct:Mydata(2,3),x*1.33;PM10_环境压力}  |||440725863SP01A|3|
 |A|脚本语句测试|分析仪器|RS-232|COM11|e,7,2|9600|$0 1 mg/m3$x*1$mg/m3$|PM10|1|连续数据|yy-MM-dd  HH:|{Send:,HEX(142),lrec 1,HEX(13),,HEX(10),}  {Receive:;,HEX(13),,HEX(10),;1;;;$sample $$rh $$ %$}   |,风速,|||1|
